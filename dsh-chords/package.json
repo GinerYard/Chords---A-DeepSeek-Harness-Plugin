@@ -1,0 +1,35 @@
+{
+  "name": "dsh-chords",
+  "version": "0.3.3",
+  "private": true,
+  "license": "MIT",
+  "description": "Chords (和弦): Code Harness, Online Reference & DeepSeek — dual-pane code + natural-language pseudocode cards with certainty labels, in-place background edits, and session-scoped persistence.",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "vitest": "^3.0.0"
+  },
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-api-remotes",
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-tool"
+      ],
+      "platform": "web"
+    }
+  }
+}
